@@ -30,13 +30,18 @@
   padding: 0;
 }
 
+html, body {
+  height: auto !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 /* --- Typographical Hierarchy --- */
@@ -652,6 +657,9 @@ h1, h2, h3, h4 {
    FOOTER SECTION
    ========================================================================== */
 .museum-footer {
+  position: static !important;
+  display: block !important;
+  clear: both !important;
   width: 100%;
   padding: 40px 20px;
   text-align: center;
