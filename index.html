@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Indian Art Through the Ages — Interactive Timeline of Historical Masterpieces</title>
+  <meta name="description" content="Explore the rich 4,500-year evolution of Indian art history from c. 2500 BCE to the 21st century. An interactive digital museum showcasing masterpieces from the Indus Valley, Maurya, Gupta, Chola, Mughal, and modern eras.">
+  <meta name="keywords" content="Indian Art, Art History, Interactive Timeline, Indus Valley, Ashoka Capital, Gupta Buddha, Chola Bronzes, Mughal Painting, Raja Ravi Varma, Amrita Sher-Gil, Digital Archive">
+  <meta name="author" content="Aarohi">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Indian Art Through the Ages — Interactive Art History Timeline">
+  <meta property="og:description" content="Embark on a visual journey through 4,500 years of Indian art, from the Indus Valley Civilization to contemporary digital art. Powered by TimelineJS.">
+  <meta property="og:type" content="website">
+  
+  <!-- Stylesheets -->
+  <!-- 1. TimelineJS CDN CSS -->
+  <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+  
+  <!-- 2. Custom Museum Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Museum Title Header -->
+  <header class="museum-header">
+    <h1>Indian Art Through the Ages</h1>
+    <div class="subtitle">An Interactive Historical Archive</div>
+  </header>
+
+  <!-- Main Museum Area -->
+  <main class="museum-container">
+    
+    <!-- Timeline Display Section -->
+    <!-- The horizontal timeline dominates the upper viewport -->
+    <section class="timeline-wrapper" aria-label="Historical Timeline">
+      <div id="timeline-embed" aria-label="Interactive timeline display"></div>
+    </section>
+
+    <!-- Selected Artifact Information Section -->
+    <!-- Displays detailed metadata and overview of the active timeline artifact -->
+    <section class="selected-artifact-section" aria-label="Selected Artifact Panel">
+      <div class="section-label">Selected Artifact Details</div>
+      
+      <div class="artifact-panel-grid" id="selected-artifact-info" aria-live="polite">
+        <!-- Left: Image Presentation -->
+        <div class="panel-image-container">
+          <img class="panel-image" id="panel-image" src="" alt="Active artifact image">
+          <div class="panel-image-credit" id="panel-image-credit"></div>
+        </div>
+        
+        <!-- Right: Description and Table -->
+        <div class="panel-details-container">
+          <div class="panel-era" id="panel-era"></div>
+          <h2 class="panel-title" id="panel-title"></h2>
+          
+          <!-- Structured Metadata Table -->
+          <div class="panel-metadata-table" role="table" aria-label="Artifact Metadata">
+            <div class="metadata-item" role="row">
+              <span class="metadata-label" role="columnheader">Period</span>
+              <span class="metadata-val" id="meta-period" role="cell"></span>
+            </div>
+            <div class="metadata-item" role="row">
+              <span class="metadata-label" role="columnheader">Region</span>
+              <span class="metadata-val" id="meta-region" role="cell"></span>
+            </div>
+            <div class="metadata-item" role="row">
+              <span class="metadata-label" role="columnheader">Medium</span>
+              <span class="metadata-val" id="meta-medium" role="cell"></span>
+            </div>
+            <div class="metadata-item" role="row">
+              <span class="metadata-label" role="columnheader">Artist / School</span>
+              <span class="metadata-val" id="meta-artist" role="cell"></span>
+            </div>
+          </div>
+          
+          <p class="panel-text" id="panel-text"></p>
+          
+          <button class="explore-btn" id="explore-btn" aria-haspopup="dialog" aria-controls="editorial-modal">
+            Explore Full Essay
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Minimal Center Footer -->
+  <footer class="museum-footer">
+    Made by Aarohi
+  </footer>
+
+  <!-- Custom Interactive Hover Card -->
+  <!-- Appears absolute positioned when mouseenters a timeline navigation marker dot -->
+  <div class="custom-hover-card" id="hover-card" aria-hidden="true"></div>
+
+  <!-- Full-Screen Editorial Modal (Detailed Information View) -->
+  <!-- Opens on clicking explore-btn or clicking the slide content inside TimelineJS -->
+  <div class="editorial-modal-overlay" id="editorial-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-header-nav">
+      <div class="modal-nav-title">Indian Art Through the Ages — Exhibition Catalogue</div>
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close detailed view">
+        <span>Close</span>
+      </button>
+    </div>
+    
+    <div class="modal-content-container">
+      <div class="modal-editorial-header">
+        <div class="modal-era" id="modal-era"></div>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <div class="modal-divider"></div>
+        
+        <!-- Metadata Grid inside Modal -->
+        <div class="modal-meta-grid" aria-label="Artifact specifications">
+          <div class="modal-meta-item">
+            <div class="modal-meta-label">Period</div>
+            <div class="modal-meta-val" id="modal-meta-period"></div>
+          </div>
+          <div class="modal-meta-item">
+            <div class="modal-meta-label">Region</div>
+            <div class="modal-meta-val" id="modal-meta-region"></div>
+          </div>
+          <div class="modal-meta-item">
+            <div class="modal-meta-label">Medium</div>
+            <div class="modal-meta-val" id="modal-meta-medium"></div>
+          </div>
+          <div class="modal-meta-item">
+            <div class="modal-meta-label">Artist / School</div>
+            <div class="modal-meta-val" id="modal-meta-artist"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Museum-framed Large Image -->
+      <div class="modal-art-frame">
+        <img class="modal-art-image" id="modal-image" src="" alt="Detailed high-res view of artifact">
+        <div class="modal-art-credit" id="modal-image-credit"></div>
+      </div>
+      
+      <!-- Rich Historical Context (Editorial Essay) -->
+      <article class="modal-editorial-body" id="modal-editorial-body" aria-label="Editorial essay text">
+        <!-- Populated via Javascript -->
+      </article>
+    </div>
+  </div>
+
+  <!-- Script Libraries -->
+  <!-- 1. TimelineJS CDN JavaScript -->
+  <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+  
+  <!-- 2. Application Logic Files -->
+  <script src="js/data.js"></script>
+  <script src="js/timeline.js"></script>
+  <script src="js/interactions.js"></script>
+
+</body>
+</html>

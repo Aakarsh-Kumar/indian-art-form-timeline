@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%" style="background-color: transparent;">
+  <!-- Definitions for gradients and clipping -->
+  <defs>
+    <linearGradient id="saffron-terracotta" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f4a261" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#c95b43" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="digital-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#606c38" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#2a9d8f" stop-opacity="0.9"/>
+    </linearGradient>
+    <pattern id="dot-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#1a1a1a" opacity="0.1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Layer: Subtle Paper Texture Dot Grid (right side) -->
+  <rect x="400" y="50" width="350" height="500" fill="url(#dot-grid)" rx="8" />
+
+  <!-- Left: Traditional India (Temple Spires & Mandala) -->
+  <g id="traditional-layer" transform="translate(0, 0)">
+    <!-- Traditional Mandala Background Element -->
+    <circle cx="200" cy="300" r="150" fill="none" stroke="#c95b43" stroke-width="1" stroke-dasharray="3 3" opacity="0.4" />
+    <circle cx="200" cy="300" r="120" fill="none" stroke="#c95b43" stroke-width="1.5" opacity="0.5" />
+    
+    <!-- Mandala Petals / Rays -->
+    <g transform="translate(200, 300)" opacity="0.6">
+      <path d="M0 -120 C 15 -100, 15 -70, 0 -50 C -15 -70, -15 -100, 0 -120" fill="url(#saffron-terracotta)" />
+      <path d="M0 -120 C 15 -100, 15 -70, 0 -50 C -15 -70, -15 -100, 0 -120" fill="url(#saffron-terracotta)" transform="rotate(45)" />
+      <path d="M0 -120 C 15 -100, 15 -70, 0 -50 C -15 -70, -15 -100, 0 -120" fill="url(#saffron-terracotta)" transform="rotate(90)" />
+      <path d="M0 -120 C 15 -100, 15 -70, 0 -50 C -15 -70, -15 -100, 0 -120" fill="url(#saffron-terracotta)" transform="rotate(135)" />
+      <path d="M0 -120 C 15 -100, 15 -70, 0 -50 C -15 -70, -15 -100, 0 -120" fill="url(#saffron-terracotta)" transform="rotate(180)" />
+      <path d="M0 -120 C 15 -100, 15 -70, 0 -50 C -15 -70, -15 -100, 0 -120" fill="url(#saffron-terracotta)" transform="rotate(225)" />
+      <path d="M0 -120 C 15 -100, 15 -70, 0 -50 C -15 -70, -15 -100, 0 -120" fill="url(#saffron-terracotta)" transform="rotate(270)" />
+      <path d="M0 -120 C 15 -100, 15 -70, 0 -50 C -15 -70, -15 -100, 0 -120" fill="url(#saffron-terracotta)" transform="rotate(315)" />
+    </g>
+
+    <!-- Stylized Temple Spires (Shikhara) -->
+    <path d="M120 450 L120 380 Q130 350, 140 280 Q150 350, 160 380 L160 450 Z" fill="#c95b43" opacity="0.25" />
+    <path d="M150 450 L150 320 Q170 280, 180 180 Q190 280, 210 320 L210 450 Z" fill="#c95b43" opacity="0.35" />
+    <path d="M200 450 L200 350 Q215 320, 225 240 Q235 320, 250 350 L250 450 Z" fill="#f4a261" opacity="0.3" />
+
+    <!-- Traditional Arch Motif -->
+    <path d="M80 450 C80 350, 320 350, 320 450" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.2" />
+  </g>
+
+  <!-- Middle: Modern India (Human Figure & Transitional Elements) -->
+  <g id="modern-layer">
+    <!-- Clean, hand-drawn style silhouette of a person representing the artist/observer -->
+    <!-- Positioned in the center, bridging traditional and digital -->
+    <path d="M360 450 
+             C360 400, 370 380, 385 360 
+             C375 350, 370 330, 375 310 
+             C380 290, 400 280, 415 295 
+             C430 280, 450 290, 455 310 
+             C460 330, 455 350, 445 360 
+             C460 380, 470 400, 470 450 Z" 
+          fill="#1a1a1a" opacity="0.75" />
+          
+    <!-- Subtle organic lines radiating from figure to the left, transitioning to blocks on the right -->
+    <path d="M380 320 C320 310, 280 270, 240 280" fill="none" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="2 4" opacity="0.4" />
+    <path d="M385 340 C310 350, 260 380, 220 370" fill="none" stroke="#c95b43" stroke-width="1.5" opacity="0.5" />
+  </g>
+
+  <!-- Right: Modern City Skyline & Digital Pixel Blocks (Digital India) -->
+  <g id="digital-layer" transform="translate(450, 0)">
+    <!-- Modern City Skyline Silhouette -->
+    <rect x="50" y="250" width="40" height="200" fill="#2a9d8f" opacity="0.2" rx="2" />
+    <rect x="100" y="180" width="55" height="270" fill="#606c38" opacity="0.3" rx="2" />
+    <rect x="170" y="220" width="45" height="230" fill="#2a9d8f" opacity="0.25" rx="2" />
+    <rect x="230" y="280" width="50" height="170" fill="#1a1a1a" opacity="0.15" rx="2" />
+
+    <!-- Skyline details: tiny window grids (digital elements) -->
+    <g fill="#faf8f5" opacity="0.5">
+      <rect x="110" y="200" width="6" height="6" />
+      <rect x="120" y="200" width="6" height="6" />
+      <rect x="130" y="200" width="6" height="6" />
+      <rect x="110" y="220" width="6" height="6" />
+      <rect x="120" y="220" width="6" height="6" />
+      <rect x="130" y="220" width="6" height="6" />
+      <rect x="110" y="240" width="6" height="6" />
+      <rect x="120" y="240" width="6" height="6" />
+      <rect x="130" y="240" width="6" height="6" />
+      
+      <rect x="180" y="240" width="6" height="6" />
+      <rect x="190" y="240" width="6" height="6" />
+      <rect x="180" y="260" width="6" height="6" />
+      <rect x="190" y="260" width="6" height="6" />
+    </g>
+
+    <!-- Digital Connection Network (Nodes & Lines) -->
+    <g stroke="#2a9d8f" stroke-width="1.5" opacity="0.6">
+      <line x1="80" y1="120" x2="160" y2="90" />
+      <line x1="160" y1="90" x2="220" y2="150" />
+      <line x1="220" y1="150" x2="180" y2="210" />
+      <line x1="160" y1="90" x2="180" y2="210" />
+      <line x1="80" y1="120" x2="120" y2="190" />
+    </g>
+    
+    <!-- Pulse nodes (circles) -->
+    <g fill="#2a9d8f">
+      <circle cx="80" cy="120" r="5" />
+      <circle cx="160" cy="90" r="7" fill="#606c38" />
+      <circle cx="220" cy="150" r="5" />
+      <circle cx="180" cy="210" r="4" fill="#1a1a1a" />
+      <circle cx="120" cy="190" r="4" />
+    </g>
+
+    <!-- Abstract Pixel Grid / Coding Arrays (representing software/future) -->
+    <g fill="#2a9d8f" opacity="0.4">
+      <rect x="250" y="100" width="12" height="12" />
+      <rect x="264" y="100" width="12" height="12" fill="#c95b43" />
+      <rect x="250" y="114" width="12" height="12" />
+      <rect x="278" y="114" width="12" height="12" />
+      <rect x="264" y="128" width="12" height="12" />
+      
+      <rect x="200" y="50" width="8" height="8" />
+      <rect x="210" y="50" width="8" height="8" />
+      <rect x="200" y="60" width="8" height="8" />
+    </g>
+  </g>
+
+  <!-- Horizontal Transition Line (The Timeline itself) -->
+  <line x1="50" y1="450" x2="750" y2="450" stroke="#1a1a1a" stroke-width="2" />
+  
+  <!-- Ticks on the timeline -->
+  <circle cx="200" cy="450" r="5" fill="#c95b43" />
+  <text x="200" y="475" font-family="'Inter', sans-serif" font-size="12" fill="#1a1a1a" text-anchor="middle" opacity="0.6">BCE</text>
+  
+  <circle cx="410" cy="450" r="5" fill="#1a1a1a" />
+  <text x="410" y="475" font-family="'Inter', sans-serif" font-size="12" fill="#1a1a1a" text-anchor="middle" opacity="0.6">CE</text>
+
+  <circle cx="620" cy="450" r="5" fill="#2a9d8f" />
+  <text x="620" y="475" font-family="'Inter', sans-serif" font-size="12" fill="#1a1a1a" text-anchor="middle" opacity="0.6">DIGITAL</text>
+
+  <!-- Decorative Border and Arch Details -->
+  <rect x="20" y="20" width="760" height="560" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.1" />
+  
+  <!-- Corner Ornaments (Traditional Indian Corner Accents) -->
+  <path d="M 25 35 L 35 35 L 35 25" fill="none" stroke="#c95b43" stroke-width="1.5" opacity="0.5" />
+  <path d="M 775 35 L 765 35 L 765 25" fill="none" stroke="#c95b43" stroke-width="1.5" opacity="0.5" />
+  <path d="M 25 565 L 35 565 L 35 575" fill="none" stroke="#c95b43" stroke-width="1.5" opacity="0.5" />
+  <path d="M 775 565 L 765 565 L 765 575" fill="none" stroke="#c95b43" stroke-width="1.5" opacity="0.5" />
+</svg>
